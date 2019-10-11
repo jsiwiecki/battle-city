@@ -1087,7 +1087,7 @@ class Enemy(Tank):
 		# if we can go anywhere else, turn around
 		if new_direction == None:
 			new_direction = opposite_direction
-			print "nav izejas. griezhamies"
+			print("nav izejas. griezhamies")
 
 		# fix tanks position
 		if fix_direction and new_direction == self.direction:
@@ -1403,7 +1403,7 @@ class Game():
 
 		global play_sounds, sounds
 
-		print "Game Over"
+		print("Game Over")
 		if play_sounds:
 			for sound in sounds:
 				sounds[sound].stop()
@@ -1883,7 +1883,7 @@ class Game():
 		if hiscore > 19999 and hiscore < 1000000:
 			return hiscore
 		else:
-			print "cheater =["
+			print("cheater =[")
 			return 20000
 
 	def saveHiscore(self, hiscore):
@@ -1893,7 +1893,7 @@ class Game():
 		try:
 			f = open(".hiscore", "w")
 		except:
-			print "Can't save hi-score"
+			print("Can't save hi-score")
 			return False
 		f.write(str(hiscore))
 		f.close()
@@ -1913,7 +1913,7 @@ class Game():
 		self.active = False
 		gtimer.add(3000, lambda :self.showScores(), 1)
 
-		print "Stage "+str(self.stage)+" completed"
+		print("Stage "+str(self.stage)+" completed")
 
 	def nextLevel(self):
 		""" Start next level """
